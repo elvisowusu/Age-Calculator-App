@@ -13,7 +13,7 @@ function App() {
             <label htmlFor="" className="block">
               DAY
             </label>
-            <input type="number" placeholder="DD" />
+            <input className="w-[" type="number" placeholder="DD" />
           </div>
 
           <div>
@@ -38,10 +38,10 @@ function App() {
            alt=""
           />
         </div>
-        <div className="">
-          <p>{update}years</p>
-          <p>{update}months</p>
-          <p>{update}days</p>
+        <div className="text-[2rem]">
+          <p><span>{update}</span>years</p>
+          <p><span>{update}</span>months</p>
+          <p><span>{update}</span>days</p>
         </div>
       </div>
       {/* <img src={arrowImg} alt="" className='bg-Purple hover:bg-offBlack'/> */}
