@@ -30,10 +30,10 @@ function App() {
             <input type="text" placeholder="YYYY" />
           </div>
         </form>
-        <div>
-          <hr />
+        <div className="relative flex items-center justify-center">
+          <hr className="w-full"/>
           <img
-           className="bg-Purple rounded-full h-10 w-10 py-2"
+           className="absolute bg-Purple rounded-full h-10 w-10 py-3"
            src={arrowImg}
            alt=""
           />
