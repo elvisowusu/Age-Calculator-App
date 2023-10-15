@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        Poppins:`Poppins, sans-serif`,
+      },
       colors:{
           Purple: `hsl(259, 100%, 65%)`,
           lightRed: `hsl(0, 100%, 67%)`,
