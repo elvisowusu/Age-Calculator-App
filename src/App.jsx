@@ -8,7 +8,12 @@ function App() {
     <div className='font-Poppins bg-offWhite h-100vh'>
      <div className='bg-white'>
       <div>
-        
+        <input 
+         type="text"
+        />
+        <input
+         type="text"
+        />
       </div>
       <div>
 
