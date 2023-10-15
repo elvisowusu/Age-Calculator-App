@@ -4,18 +4,26 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="font-Poppins bg-offWhite h-100vh">
+    <div className="flex flex-col justify-center items-center font-Poppins bg-offWhite">
       <div className="bg-white">
-        <div>
-          <form action="">
-            <label htmlFor="">DAY</label>
-            <input type="text" />
-            <label htmlFor="">MONTH</label>
-            <input type="text" />
-            <label htmlFor="">YEAR</label>
-            <input type="text" />
+        
+          <form className="flex" action="">
+            <div className="block">
+              <label htmlFor="" className="block">DAY</label>
+              <input type="number" placeholder="DD" />
+            </div>
+
+            <div>
+              <label htmlFor="" className="block">MONTH</label>
+              <input type="number" placeholder="MM" />
+            </div>
+
+            <div>
+              <label htmlFor="" className="block">YEAR</label>
+              <input type="text" placeholder="YYYY" />
+            </div>
           </form>
-        </div>
+        
         <div></div>
       </div>
       {/* <img src={arrowImg} alt="" className='bg-Purple hover:bg-offBlack'/> */}
