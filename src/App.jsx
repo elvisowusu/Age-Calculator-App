@@ -4,7 +4,7 @@ import './App.css'
 function App() {
 
   return (
-    <div className='font-Poppins text-offBlack'>
+    <div className='font-Poppins '>
      Begini
     </div>
   )
