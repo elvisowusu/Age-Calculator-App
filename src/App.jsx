@@ -2,15 +2,8 @@ import React, { useState,useReducer } from "react";
 import arrowImg from "./assets/icon-arrow.svg";
 import "./App.css";
 
-// const reducer =()=>{
-//   switch (action.type){
-//     case 'year':
-//       return{}
-//   }
-// }
-
 function App() {
-  // const [state,dispatch]=useReducer(reducer,{day:'--',month:'--',year:'--'})
+
   const [day,setDay]=useState('--');
   const [month,setMonth] = useState('--');
   const [year, setYear] = useState('--');
