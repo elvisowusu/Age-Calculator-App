@@ -1,5 +1,6 @@
 import React, { useState,useReducer } from "react";
 import {useForm} from 'react-hook-form';
+import * as yup from 'yup'
 import arrowImg from "./assets/icon-arrow.svg";
 import "./App.css";
 
