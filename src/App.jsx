@@ -97,9 +97,9 @@ function App() {
         </div>
         </form>
         <div className="text-[3rem] leading-[3.2rem] italic font-black mb-[1.5rem] text-offBlack">
-          <p><span className="text-Purple">{year}</span> years</p>
+          <p><span className="text-Purple">{year}</span> {year<2?'year':'years'}</p>
           <p><span className="text-Purple">{month}</span> months</p>
-          <p><span className="text-Purple">{day}</span> days</p>
+          <p><span className="text-Purple">{day }</span> days</p>
         </div>
       
       </div>
