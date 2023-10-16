@@ -8,16 +8,13 @@ function App() {
   const [month,setMonth] = useState('--');
   const [year, setYear] = useState('--');
   const handleDay=(e)=>{
-    setDay(e.target.value);
+    setDay(16-(e.target.value));
   }
   const handleMonth=(e)=>{
-    setMonth(e.target.value);
+    setMonth(10-(e.target.value));
   }
   const handleYear=(e)=>{
-    setYear(e.target.value);
-  }
-  const age =()=>{
-
+    setYear(2023-(e.target.value));
   }
 
 
@@ -63,13 +60,15 @@ function App() {
         </form>
         <div className="relative flex items-center justify-center mb-12">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
+          <button className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack">
           <img 
-           className="absolute bg-Purple rounded-full h-[3rem] w-[3rem] py-3"
+           className={`rounded-full h-[3rem] w-[3rem] py-3 `}
            src={arrowImg}
            alt=""
           />
+          </button>
         </div>
-        <div className="text-[3rem] leading-[3rem] italic font-black mb-[2rem]">
+        <div className="text-[3rem] leading-[3rem] italic font-black mb-[2rem] text-offBlack">
           <p><span className="text-Purple">{year}</span> years</p>
           <p><span className="text-Purple">{month}</span> months</p>
           <p><span className="text-Purple">{day}</span> days</p>
