@@ -17,6 +17,10 @@ function App() {
   const handleDay=(e)=>{
     setDay(e.target.value);
   }
+  const handleMonth=(e)=>{
+    setDay(e.target.value);
+  }
+
 
   return (
     <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
@@ -42,6 +46,7 @@ function App() {
               className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]"
               type="number"
               placeholder="MM"
+              onChange={handleMonth}
             />
           </div>
 
