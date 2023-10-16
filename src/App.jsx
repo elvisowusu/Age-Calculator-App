@@ -23,7 +23,7 @@ function App() {
       <div className="bg-white p-6 rounded-3xl">
         <form className="flex gap-2 justify-between items-center mb-[3rem] mt-5" action="">
           <div className="block">
-            <label htmlFor="" className="block text-xs font-semibold mb-1">
+            <label htmlFor="" className="block text-xs font-semibold mb-1 tracking-widest">
               DAY
             </label>
             <input 
@@ -35,7 +35,7 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs font-semibold mb-1">
+            <label htmlFor="" className="block text-xs font-semibold mb-1 tracking-widest">
               MONTH
             </label>
             <input 
@@ -47,7 +47,7 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs font-semibold mb-1">
+            <label htmlFor="" className="block text-xs font-semibold mb-1 tracking-widest">
               YEAR
             </label>
             <input 
