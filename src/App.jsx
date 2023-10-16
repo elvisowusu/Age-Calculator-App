@@ -1,4 +1,5 @@
 import React, { useState,useReducer } from "react";
+import {useForm} from 'react-hook-form';
 import arrowImg from "./assets/icon-arrow.svg";
 import "./App.css";
 
@@ -7,15 +8,25 @@ function App() {
   const [day,setDay]=useState('--');
   const [month,setMonth] = useState('--');
   const [year, setYear] = useState('--');
-  const handleDay=(e)=>{
-    setDay(26-(e.target.value));
-  }
-  const handleMonth=(e)=>{
-    setMonth(10-(e.target.value));
-  }
-  const handleYear=(e)=>{
-    setYear(2023-(e.target.value));
-  }
+  
+  
+
+  // const handleDay=(e)=>{
+  //  return 26-(e.target.value);
+  // }
+  // const handleMonth=(e)=>{
+  //   return 10-(e.target.value);
+  // }
+  // const handleYear=(e)=>{
+  //   return 2023-(e.target.value);
+  // }
+  // const handleClicked=()=>{
+  //   setDay(handleDay());
+  //   setMonth(handleMonth());
+  //   setYear(handleYear());
+  // }
+
+  const {register,handleSubmit,errors}=useForm()
 
 
   return (
@@ -30,7 +41,7 @@ function App() {
               className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]"
               type="number" 
               placeholder="DD"
-              onChange={handleDay}
+              {...register}
             />
           </div>
 
@@ -42,7 +53,7 @@ function App() {
               className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]"
               type="number"
               placeholder="MM"
-              onChange={handleMonth}
+              {...register}
             />
           </div>
 
@@ -54,18 +65,21 @@ function App() {
               className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-4 pr-[1rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]" 
               type="number"
               placeholder="YYYY"
-              onChange={handleYear}
+              {...register}
             />
           </div>
         </form>
         <div className="relative flex items-center justify-center mb-12">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
-          <button className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack">
-          <img 
-           className={`rounded-full h-[3rem] w-[3rem] py-3 `}
-           src={arrowImg}
-           alt=""
-          />
+          <button 
+            className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack"
+            // onClick={handleClicked}
+            >
+              <img 
+                className={`rounded-full h-[3rem] w-[3rem] py-3 `}
+                src={arrowImg}
+                alt=""
+              />
           </button>
         </div>
         <div className="text-[3rem] leading-[3.2rem] italic font-black mb-[1.5rem] text-offBlack">
