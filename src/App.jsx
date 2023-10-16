@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
       <div className="bg-white p-5">
-        <form className="flex gap-2 justify-between items-center mb-4" action="">
+        <form className="flex gap-2 justify-between items-center mb-[3rem]" action="">
           <div className="block">
             <label htmlFor="" className="block text-xs font-semibold">
               DAY
@@ -30,10 +30,10 @@ function App() {
             <input className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[1rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pl-[-10r" type="number" placeholder="YYYY" />
           </div>
         </form>
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center mb-12">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
           <img 
-           className="absolute bg-Purple rounded-full h-10 w-10 py-3"
+           className="absolute bg-Purple rounded-full h-[3rem] w-[3rem] py-3"
            src={arrowImg}
            alt=""
           />
