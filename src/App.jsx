@@ -13,21 +13,21 @@ function App() {
             <label htmlFor="" className="block text-xs font-semibold">
               DAY
             </label>
-            <input className="w-[6rem] outline-none rounded-md border-lightGrey focus:border-Purple py-1 pl-4 pr-[3.1rem] border font-bold text-[1.6rem] placeholder:text-[1.3rem]" type="number" placeholder="DD" />
+            <input className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]" type="number" placeholder="DD" />
           </div>
 
           <div>
             <label htmlFor="" className="block text-xs font-semibold">
               MONTH
             </label>
-            <input className="w-[6rem] outline-none rounded-md border-lightGrey focus:border-Purple py-1 pl-4 pr-[3.1rem] border font-bold text-[1.6rem] placeholder:text-[1.3rem]" type="number" placeholder="MM" />
+            <input className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]" type="number" placeholder="MM" />
           </div>
 
           <div>
             <label htmlFor="" className="block text-xs font-semibold">
               YEAR
             </label>
-            <input className="w-[6rem] outline-none rounded-md border-lightGrey focus:border-Purple py-1 pl-4 pr-5 border font-bold text-[1.6rem] placeholder:text-[1.3rem]" type="number" placeholder="YYYY" />
+            <input className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[1rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pl-[-10r" type="number" placeholder="YYYY" />
           </div>
         </form>
         <div className="relative flex items-center justify-center">
