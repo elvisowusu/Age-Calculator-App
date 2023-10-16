@@ -8,7 +8,7 @@ function App() {
   const [month,setMonth] = useState('--');
   const [year, setYear] = useState('--');
   const handleDay=(e)=>{
-    setDay(16-(e.target.value));
+    setDay(26-(e.target.value));
   }
   const handleMonth=(e)=>{
     setMonth(10-(e.target.value));
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
-      <div className="bg-white p-6 rounded-3xl">
+      <div className="bg-white p-6 rounded-3xl rounded-br-[5.5rem]">
         <form className="flex gap-2 justify-between items-center mb-[3rem] mt-5" action="">
           <div className="block">
             <label htmlFor="" className="block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest">
@@ -68,7 +68,7 @@ function App() {
           />
           </button>
         </div>
-        <div className="text-[3rem] leading-[3rem] italic font-black mb-[2rem] text-offBlack">
+        <div className="text-[3rem] leading-[3.2rem] italic font-black mb-[1.5rem] text-offBlack">
           <p><span className="text-Purple">{year}</span> years</p>
           <p><span className="text-Purple">{month}</span> months</p>
           <p><span className="text-Purple">{day}</span> days</p>
