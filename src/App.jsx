@@ -23,11 +23,11 @@ function App() {
       <div className="bg-white p-6 rounded-3xl">
         <form className="flex gap-2 justify-between items-center mb-[3rem] mt-5" action="">
           <div className="block">
-            <label htmlFor="" className="block text-xs font-semibold mb-1 tracking-widest">
+            <label htmlFor="" className="block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest">
               DAY
             </label>
             <input 
-              className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]"
+              className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]"
               type="number" 
               placeholder="DD"
               onChange={handleDay}
@@ -35,11 +35,11 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs font-semibold mb-1 tracking-widest">
+            <label htmlFor="" className="block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest">
               MONTH
             </label>
             <input 
-              className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]"
+              className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-4 pr-[2.5rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]"
               type="number"
               placeholder="MM"
               onChange={handleMonth}
@@ -47,11 +47,11 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs font-semibold mb-1 tracking-widest">
+            <label htmlFor="" className="block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest">
               YEAR
             </label>
             <input 
-              className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[1rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]" 
+              className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-4 pr-[1rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]" 
               type="number"
               placeholder="YYYY"
               onChange={handleYear}
