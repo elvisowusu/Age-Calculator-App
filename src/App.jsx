@@ -6,27 +6,28 @@ function App() {
   const [update, setUpdate] = useState("--");
 
   return (
-    <div className="font-Poppins bg-white">
+    <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
+        <div className="bg-white">
         <form className="flex" action="">
           <div className="block">
             <label htmlFor="" className="block">
               DAY
             </label>
-            <input className="" type="number" placeholder="DD" />
+            <input className="w-2" type="number" placeholder="DD" />
           </div>
 
           <div>
             <label htmlFor="" className="block">
               MONTH
             </label>
-            <input type="number" placeholder="MM" />
+            <input className="w-2" type="number" placeholder="MM" />
           </div>
 
           <div>
             <label htmlFor="" className="block">
               YEAR
             </label>
-            <input type="number" placeholder="YYYY" />
+            <input className="w-2" type="number" placeholder="YYYY" />
           </div>
         </form>
         <div className="relative flex items-center justify-center">
@@ -43,6 +44,7 @@ function App() {
           <p><span>{update}</span>days</p>
         </div>
       
+        </div>
     </div>
   );
 }
