@@ -38,10 +38,10 @@ function App() {
            alt=""
           />
         </div>
-        <div className="text-[2rem]">
-          <p><span>{update}</span>years</p>
-          <p><span>{update}</span>months</p>
-          <p><span>{update}</span>days</p>
+        <div className="text-[3rem] leading-[3rem] italic font-extrabold">
+          <p><span className="text-Purple">{update}</span> years</p>
+          <p><span className="text-Purple">{update}</span> months</p>
+          <p><span className="text-Purple">{update}</span> days</p>
         </div>
       
       </div>
