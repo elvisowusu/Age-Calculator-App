@@ -23,14 +23,17 @@ function App() {
   const handleYear=(e)=>{
     setYear(e.target.value);
   }
+  const age =()=>{
+
+  }
 
 
   return (
     <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
-      <div className="bg-white p-5">
-        <form className="flex gap-2 justify-between items-center mb-[3rem]" action="">
+      <div className="bg-white p-6 rounded-3xl">
+        <form className="flex gap-2 justify-between items-center mb-[3rem] mt-5" action="">
           <div className="block">
-            <label htmlFor="" className="block text-xs font-semibold">
+            <label htmlFor="" className="block text-xs font-semibold mb-1">
               DAY
             </label>
             <input 
@@ -42,7 +45,7 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs font-semibold">
+            <label htmlFor="" className="block text-xs font-semibold mb-1">
               MONTH
             </label>
             <input 
@@ -54,7 +57,7 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs font-semibold">
+            <label htmlFor="" className="block text-xs font-semibold mb-1">
               YEAR
             </label>
             <input 
@@ -73,10 +76,10 @@ function App() {
            alt=""
           />
         </div>
-        <div className="text-[3rem] leading-[3rem] italic font-black">
-          <p><span className="text-Purple">{day}</span> years</p>
+        <div className="text-[3rem] leading-[3rem] italic font-black mb-[2rem]">
+          <p><span className="text-Purple">{year}</span> years</p>
           <p><span className="text-Purple">{month}</span> months</p>
-          <p><span className="text-Purple">{year}</span> days</p>
+          <p><span className="text-Purple">{day}</span> days</p>
         </div>
       
       </div>
