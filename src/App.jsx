@@ -18,7 +18,10 @@ function App() {
     setDay(e.target.value);
   }
   const handleMonth=(e)=>{
-    setDay(e.target.value);
+    setMonth(e.target.value);
+  }
+  const handleYear=(e)=>{
+    setYear(e.target.value);
   }
 
 
@@ -58,7 +61,7 @@ function App() {
               className="w-[5rem] outline-none rounded-md border-lightGrey focus:border-Purple py-2 pl-4 pr-[1rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]" 
               type="number"
               placeholder="YYYY"
-              
+              onChange={handleYear}
             />
           </div>
         </form>
