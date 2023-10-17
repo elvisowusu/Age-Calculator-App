@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
-      <div className="bg-white p-6 rounded-3xl rounded-br-[5.5rem]">
+      <div className="bg-white p-6 sm:px-8 rounded-3xl rounded-br-[5.5rem] sm:rounded-br-[8rem]">
         <form onSubmit={handleSubmit(onSubmit)} >
           <div
            className="flex gap-2 sm:gap-3 justify-between sm:justify-start items-center mb-[3rem] mt-5 "   
@@ -53,7 +53,7 @@ function App() {
               placeholder="DD"
               {...register("DD")}
             />
-            <p className="text-[0.5rem] text-lightRed w-[5rem] italic pt-1">{errors.DD?.message}</p>
+            <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] italic pt-1">{errors.DD?.message}</p>
           </div>
 
           <div>
@@ -66,7 +66,7 @@ function App() {
               placeholder="MM"
               {...register("MM")}
             />
-            <p className="text-[0.5rem] text-lightRed w-[5rem] italic pt-1">{errors.MM?.message}</p>
+            <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] sm:w-[7rem] italic pt-1">{errors.MM?.message}</p>
           </div>
 
           <div>
@@ -79,7 +79,7 @@ function App() {
               placeholder="YYYY"
               {...register("YYYY")}
             />
-            <p className="text-[0.5rem] text-lightRed w-[5rem] italic pt-1">{errors.YYYY?.message}</p>
+            <p className="text-[0.5rem] sm:text-[6.5rem] text-lightRed w-[5rem] italic pt-1">{errors.YYYY?.message}</p>
           </div>
           </div>
         
