@@ -13,7 +13,7 @@ function App() {
   const [currentDate,setCurrentDate] =useState(new Date);
 
   const schema =yup.object().shape({
-    DD:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0,'').max(31,'must be a valid day').required('This field is required'),
+    DD:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(1,'number should exceed 0').max(31,'must be a valid day').required('This field is required'),
     MM:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(1,'Must be 1 or more').max(12,'cannot exceed 12').required('This field is required'),
     YYYY:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0).max(2023,'Must be in the past').required('This field is required'),
   })
@@ -74,7 +74,7 @@ function App() {
               YEAR
             </label>
             <input 
-              className={`w-[5.1rem] sm:w-[6.5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-0 sm:pr-7 border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
+              className={`w-[5.1rem] sm:w-[6.5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-0 sm:pr-5 border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               {...register("YYYY")}
@@ -83,20 +83,20 @@ function App() {
           </div>
           </div>
         
-        <div className="relative flex items-center justify-center mb-12 sm:justify-end md:justify-start sm:w-[27rem]">
+        <div className="relative flex items-center justify-center mb-12 sm:justify-end lg:justify-center sm:w-[27rem] md:w-[30rem]">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
           <button 
             className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack"
             >
               <img 
-                className={`rounded-full h-[3rem] w-[3rem] py-3 `}
+                className={`rounded-full h-[3rem] md:h-[3.8rem] w-[3rem] md:w-[3.8rem] py-3 `}
                 src={arrowImg}
                 alt=""
               />
           </button>
         </div>
         </form>
-        <div className="text-[3rem] sm:text-[4rem] leading-[3.2rem] sm:leading-[4.4rem] italic font-black mb-[1.5rem] text-offBlack">
+        <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] leading-[3.2rem] sm:leading-[4.4rem] md:leading-[4.8rem] italic font-black mb-[1.5rem] text-offBlack">
           <p><span className="text-Purple">{year}</span> {year<2?'year':'years'}</p>
           <p><span className="text-Purple">{month}</span> months</p>
           <p><span className="text-Purple">{day }</span> days</p>
