@@ -15,6 +15,7 @@ function App() {
   const schema =yup.object().shape({
     DD:yup
       .number('Requires numeric values')
+      .typeError('Required')
       .positive('Positive values required')
       .integer('Should be an integer')
       .min(1,'number should exceed 0')
@@ -23,6 +24,7 @@ function App() {
 
     MM:yup
       .number('Requires numeric values')
+      .typeError('Required')
       .positive('Positive values required')
       .integer('Should be an integer')
       .min(1,'Must be 1 or more')
@@ -31,6 +33,7 @@ function App() {
 
     YYYY:yup
       .number('Requires numeric values')
+      .typeError('Required')
       .positive('Positive values required')
       .integer('Should be an integer')
       .min(0)
