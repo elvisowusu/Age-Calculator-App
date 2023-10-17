@@ -13,9 +13,29 @@ function App() {
   const [currentDate,setCurrentDate] =useState(new Date);
 
   const schema =yup.object().shape({
-    DD:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(1,'number should exceed 0').max(31,'must be a valid day').required('This field is required'),
-    MM:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(1,'Must be 1 or more').max(12,'cannot exceed 12').required('This field is required'),
-    YYYY:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0).max(2023,'Must be in the past').required('This field is required'),
+    DD:yup
+      .number('Requires numeric values')
+      .positive('Positive values required')
+      .integer('Should be an integer')
+      .min(1,'number should exceed 0')
+      .max(31,'must be a valid day')
+      .required('This field is required'),
+
+    MM:yup
+      .number('Requires numeric values')
+      .positive('Positive values required')
+      .integer('Should be an integer')
+      .min(1,'Must be 1 or more')
+      .max(12,'cannot exceed 12')
+      .required('This field is required'),
+
+    YYYY:yup
+      .number('Requires numeric values')
+      .positive('Positive values required')
+      .integer('Should be an integer')
+      .min(0)
+      .max(2023,'Must be in the past')
+      .required('This field is required'),
   })
   const {register,handleSubmit,formState:{errors}}=useForm({
     resolver: yupResolver(schema),
@@ -37,7 +57,7 @@ function App() {
 
   return (
     <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
-      <div className="bg-white p-6 sm:px-8 rounded-3xl rounded-br-[5.5rem] sm:rounded-br-[8rem]">
+      <div className="bg-white p-6 sm:px-8 rounded-3xl rounded-br-[5.5rem] sm:rounded-br-[8rem] md:rounded-br-[9rem]">
         <form onSubmit={handleSubmit(onSubmit)} >
           <div
            className="flex gap-2 sm:gap-3 md:gap-6 justify-between sm:justify-start items-center mt-5 "   
@@ -48,7 +68,7 @@ function App() {
               DAY
             </label>
             <input 
-              className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem]  placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] md:pr-[3.7rem] border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem]  placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
               type="number"
               placeholder="DD"
               {...register("DD")}
@@ -61,7 +81,7 @@ function App() {
               MONTH
             </label>
             <input 
-              className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] md:pr-[3.7rem] border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
               type="number"
               placeholder="MM"
               {...register("MM")}
@@ -74,7 +94,7 @@ function App() {
               YEAR
             </label>
             <input 
-              className={`w-[5.1rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-0 sm:pr-5 border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
+              className={`w-[5.1rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-0 sm:pr-5 md:pr-6 border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               {...register("YYYY")}
@@ -83,7 +103,7 @@ function App() {
           </div>
           </div>
         
-        <div className="relative flex items-center justify-center mt-[2rem] mb-12 sm:justify-end lg:justify-center sm:w-[29rem] md:w-[33rem]">
+        <div className="relative flex items-center justify-center mt-[2rem] mb-12 sm:justify-end sm:w-[29rem] md:w-[33rem]">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
           <button 
             className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack"
@@ -96,7 +116,7 @@ function App() {
           </button>
         </div>
         </form>
-        <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] leading-[3.2rem] sm:leading-[4.4rem] md:leading-[4.8rem] italic font-black mb-[1.5rem] text-offBlack">
+        <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] leading-[3.2rem] sm:leading-[4.4rem] md:leading-[5.4rem] italic font-black mb-[1.5rem] text-offBlack">
           <p><span className="text-Purple">{year}</span> {year<2?'year':'years'}</p>
           <p><span className="text-Purple">{month}</span> months</p>
           <p><span className="text-Purple">{day }</span> days</p>
