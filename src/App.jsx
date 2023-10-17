@@ -48,12 +48,12 @@ function App() {
               DAY
             </label>
             <input 
-              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.65rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem]  placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
               type="number"
               placeholder="DD"
               {...register("DD")}
             />
-            <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] italic pt-1">{errors.DD?.message}</p>
+            <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] sm:w-[7rem] italic pt-1">{errors.DD?.message}</p>
           </div>
 
           <div>
@@ -61,7 +61,7 @@ function App() {
               MONTH
             </label>
             <input 
-              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.7rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
               type="number"
               placeholder="MM"
               {...register("MM")}
@@ -74,12 +74,12 @@ function App() {
               YEAR
             </label>
             <input 
-              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[0.2zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]`}
+              className={`w-[5.1rem] sm:w-[6.5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-0 sm:pr-7 border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               {...register("YYYY")}
             />
-            <p className="text-[0.5rem] sm:text-[6.5rem] text-lightRed w-[5rem] italic pt-1">{errors.YYYY?.message}</p>
+            <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] sm:w-[8rem] italic pt-1">{errors.YYYY?.message}</p>
           </div>
           </div>
         
