@@ -13,9 +13,9 @@ function App() {
   const [currentDate,setCurrentDate] =useState(new Date);
 
   const schema =yup.object().shape({
-    DD:yup.number().positive().integer().min(0).max(31).required(),
-    MM:yup.number().positive().integer().min(1).max(12).required(),
-    YYYY:yup.number().positive().integer().min(0).max(2023).required(),
+    DD:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0,'').max(31,'must be a valid day').required('This field is required'),
+    MM:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(1,'Must be 1 or more').max(12,'Must be in the past').required('This field is required'),
+    YYYY:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0).max(2023).required('This field is required'),
   })
   const {register,handleSubmit,formState:{errors}}=useForm({
     resolver: yupResolver(schema),
@@ -44,11 +44,11 @@ function App() {
           >
 
           <div className="block">
-            <label htmlFor="" className={`block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest`}>
+            <label htmlFor="" className={`block text-xs ${errors.DD?'text-lightRed':''} text-smokeyGrey font-semibold mb-1 tracking-widest`}>
               DAY
             </label>
             <input 
-              className={`w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.65rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
+              className={`w-[5rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.65rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
               type="number"
               placeholder="DD"
               {...register("DD")}
@@ -57,11 +57,11 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className={`block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest`}>
+            <label htmlFor="" className={`block text-xs ${errors.MM?'text-lightRed':''} text-smokeyGrey font-semibold mb-1 tracking-widest`}>
               MONTH
             </label>
             <input 
-              className={`w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.7rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
+              className={`w-[5rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.7rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
               type="number"
               placeholder="MM"
               {...register("MM")}
@@ -70,11 +70,11 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className={`block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest`}>
+            <label htmlFor="" className={`block text-xs ${errors.YYYY?'text-lightRed':''} text-smokeyGrey font-semibold mb-1 tracking-widest`}>
               YEAR
             </label>
             <input 
-              className={`w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[0.2zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]`}
+              className={`w-[5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[0.2zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               {...register("YYYY")}
