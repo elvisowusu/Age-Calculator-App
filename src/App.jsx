@@ -40,7 +40,7 @@ function App() {
       <div className="bg-white p-6 sm:px-8 rounded-3xl rounded-br-[5.5rem] sm:rounded-br-[8rem]">
         <form onSubmit={handleSubmit(onSubmit)} >
           <div
-           className="flex gap-2 sm:gap-3 justify-between sm:justify-start items-center mb-[3rem] mt-5 "   
+           className="flex gap-2 sm:gap-3 md:gap-6 justify-between sm:justify-start items-center mt-5 "   
           >
 
           <div className="block">
@@ -48,7 +48,7 @@ function App() {
               DAY
             </label>
             <input 
-              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem]  placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem]  placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
               type="number"
               placeholder="DD"
               {...register("DD")}
@@ -61,7 +61,7 @@ function App() {
               MONTH
             </label>
             <input 
-              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
               type="number"
               placeholder="MM"
               {...register("MM")}
@@ -74,7 +74,7 @@ function App() {
               YEAR
             </label>
             <input 
-              className={`w-[5.1rem] sm:w-[6.5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-0 sm:pr-5 border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
+              className={`w-[5.1rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-0 sm:pr-5 border font-bold text-[1.3rem] sm:text-[1.6rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               {...register("YYYY")}
@@ -83,13 +83,13 @@ function App() {
           </div>
           </div>
         
-        <div className="relative flex items-center justify-center mb-12 sm:justify-end lg:justify-center sm:w-[27rem] md:w-[30rem]">
+        <div className="relative flex items-center justify-center mt-[2rem] mb-12 sm:justify-end lg:justify-center sm:w-[29rem] md:w-[33rem]">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
           <button 
             className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack"
             >
               <img 
-                className={`rounded-full h-[3rem] md:h-[3.8rem] w-[3rem] md:w-[3.8rem] py-3 `}
+                className={`rounded-full h-[3rem] sm:h-[3.4rem] md:h-[3.8rem] w-[3rem] sm:w-[3.4rem] md:w-[3.8rem] py-3 `}
                 src={arrowImg}
                 alt=""
               />
