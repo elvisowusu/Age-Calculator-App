@@ -28,8 +28,8 @@ function App() {
       .typeError('Required')
       .required('This field is required'),
   })
-  const {register,handleSubmit,formState:{errors}}=useForm({
-    resolver: yupResolver(schema),
+  const {register,handleSubmit,reset,formState:{errors}}=useForm({
+    resolver: yupResolver(schema)
   });
   
 
@@ -37,13 +37,8 @@ function App() {
     setCurrentDate(new Date());
     setDay(currentDate.getDate()-data.DD);
     setMonth(currentDate.getMonth()-data.MM);
-    setYear(currentDate.getFullYear()-data.YYYY)
-    // console.log(data.DD);
-    // console.log(data.MM);
-    // console.log(data.YYYY);
-    // console.log(currentDate.getDate());
-    // console.log(currentDate.getMonth()+1);
-    // console.log(currentDate.getFullYear());
+    setYear(currentDate.getFullYear()-data.YYYY);
+    reset();
   }
 
   return (
@@ -108,7 +103,7 @@ function App() {
               YEAR
             </label>
             <input 
-              className={`w-[5.1rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-0 sm:pr-5 md:pr-6 border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
+              className={`w-[5.1rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-0 sm:pr-5 md:pr-4 border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               onInput={(e)=>{
