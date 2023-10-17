@@ -16,28 +16,16 @@ function App() {
     DD:yup
       .number('Requires numeric values')
       .typeError('Required')
-      .positive('Positive values required')
-      .integer('Should be an integer')
-      .min(1,'number should exceed 0')
-      .max(31,'must be a valid day')
       .required('This field is required'),
 
     MM:yup
       .number('Requires numeric values')
       .typeError('Required')
-      .positive('Positive values required')
-      .integer('Should be an integer')
-      .min(1,'Must be 1 or more')
-      .max(12,'cannot exceed 12')
       .required('This field is required'),
 
     YYYY:yup
       .number('Requires numeric values')
       .typeError('Required')
-      .positive('Positive values required')
-      .integer('Should be an integer')
-      .min(0)
-      .max(2023,'Must be in the past')
       .required('This field is required'),
   })
   const {register,handleSubmit,formState:{errors}}=useForm({
@@ -74,6 +62,18 @@ function App() {
               className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] md:pr-[3.7rem] border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem]  placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
               type="number"
               placeholder="DD"
+              onInput={(e) => {
+                let value = parseInt(e.target.value);
+                
+                if (isNaN(value) || value < 1 || value >= 32) {
+                  value = '';
+                } else if (value === Math.floor(value)) {
+                  // If it's a whole number, remove the .0
+                  value = value.toString();
+                }
+              
+                e.target.value = value;
+              }}
               {...register("DD")}
             />
             <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] sm:w-[7rem] italic pt-1">{errors.DD?.message}</p>
@@ -87,6 +87,17 @@ function App() {
               className={`w-[5rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-[1.5rem] sm:pr-[2.8rem] md:pr-[3.7rem] border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
               type="number"
               placeholder="MM"
+              onInput={(e)=>{
+                let value = parseInt(e.target.value);
+                if (isNaN(value) || value < 1 || value >=13){
+                  value = '';
+                } else if (value === Math.floor(value)){
+                  //if it's a whole number, remove the .0
+                  value = value.toString();
+                }
+                e.target.value = value;
+              }}
+
               {...register("MM")}
             />
             <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] sm:w-[7rem] italic pt-1">{errors.MM?.message}</p>
@@ -100,6 +111,15 @@ function App() {
               className={`w-[5.1rem] sm:w-[6.5rem] md:w-[7.6rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] md:py-[0.2rem] pl-3 pr-0 sm:pr-5 md:pr-6 border font-bold text-[1.3rem] sm:text-[1.6rem] md:text-[1.9rem] placeholder:text-[1.1rem] sm:placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
+              onInput={(e)=>{
+                let value = parseInt(e.target.value);
+                if (isNaN(value)||value <1||value >=2023){
+                  value = '';
+                } else if(value === Math.floor(value)){
+                  value = value.toString();
+                }
+                e.target.value = value
+              }}
               {...register("YYYY")}
             />
             <p className="text-[0.5rem] sm:text-[0.7rem] text-lightRed w-[5rem] sm:w-[8rem] italic pt-1">{errors.YYYY?.message}</p>
