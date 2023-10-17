@@ -14,8 +14,8 @@ function App() {
 
   const schema =yup.object().shape({
     DD:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0,'').max(31,'must be a valid day').required('This field is required'),
-    MM:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(1,'Must be 1 or more').max(12,'Must be in the past').required('This field is required'),
-    YYYY:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0).max(2023).required('This field is required'),
+    MM:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(1,'Must be 1 or more').max(12,'cannot exceed 12').required('This field is required'),
+    YYYY:yup.number('Requires numeric values').positive('Positive values required').integer('Should be an integer').min(0).max(2023,'Must be in the past').required('This field is required'),
   })
   const {register,handleSubmit,formState:{errors}}=useForm({
     resolver: yupResolver(schema),
@@ -40,7 +40,7 @@ function App() {
       <div className="bg-white p-6 rounded-3xl rounded-br-[5.5rem]">
         <form onSubmit={handleSubmit(onSubmit)} >
           <div
-           className="flex gap-2 justify-between items-center mb-[3rem] mt-5"   
+           className="flex gap-2 justify-between items-center mb-[3rem] mt-5 "   
           >
 
           <div className="block">
@@ -53,7 +53,7 @@ function App() {
               placeholder="DD"
               {...register("DD")}
             />
-            <p>{errors.DD?.message}</p>
+            <p className="text-[0.5rem] text-lightRed w-[5rem] italic pt-1">{errors.DD?.message}</p>
           </div>
 
           <div>
@@ -66,7 +66,7 @@ function App() {
               placeholder="MM"
               {...register("MM")}
             />
-            <p>{errors.MM?.message}</p>
+            <p className="text-[0.5rem] text-lightRed w-[5rem] italic pt-1">{errors.MM?.message}</p>
           </div>
 
           <div>
@@ -79,11 +79,11 @@ function App() {
               placeholder="YYYY"
               {...register("YYYY")}
             />
-            <p>{errors.YYYY?.message}</p>
+            <p className="text-[0.5rem] text-lightRed w-[5rem] italic pt-1">{errors.YYYY?.message}</p>
           </div>
           </div>
         
-        <div className="relative flex items-center justify-center mb-12">
+        <div className="relative flex items-center justify-center mb-12 sm:justify-end md:justify-start">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
           <button 
             className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack"
