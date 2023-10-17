@@ -40,7 +40,7 @@ function App() {
       <div className="bg-white p-6 rounded-3xl rounded-br-[5.5rem]">
         <form onSubmit={handleSubmit(onSubmit)} >
           <div
-           className="flex gap-2 justify-between items-center mb-[3rem] mt-5 "   
+           className="flex gap-2 sm:gap-3 justify-between sm:justify-start items-center mb-[3rem] mt-5 "   
           >
 
           <div className="block">
@@ -48,7 +48,7 @@ function App() {
               DAY
             </label>
             <input 
-              className={`w-[5rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.65rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.DD?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.65rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
               type="number"
               placeholder="DD"
               {...register("DD")}
@@ -61,7 +61,7 @@ function App() {
               MONTH
             </label>
             <input 
-              className={`w-[5rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.7rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.MM?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[1.7rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
               type="number"
               placeholder="MM"
               {...register("MM")}
@@ -74,7 +74,7 @@ function App() {
               YEAR
             </label>
             <input 
-              className={`w-[5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[0.2zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]`}
+              className={`w-[5rem] sm:w-[6.5rem] outline-none rounded-md ${errors.YYYY?'border-lightRed focus:border-lightRed':''} border-lightGrey text-offBlack focus:border-Purple py-2 sm:py-[0.4rem] pl-3 pr-[0.2zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               {...register("YYYY")}
@@ -83,7 +83,7 @@ function App() {
           </div>
           </div>
         
-        <div className="relative flex items-center justify-center mb-12 sm:justify-end md:justify-start">
+        <div className="relative flex items-center justify-center mb-12 sm:justify-end md:justify-start sm:w-[27rem]">
           <hr className="border-0 h-[0.1rem] bg-lightGrey w-full"/>
           <button 
             className="absolute bg-Purple rounded-full hover:bg-offBlack active:bg-Purple focus:bg-offBlack"
@@ -96,7 +96,7 @@ function App() {
           </button>
         </div>
         </form>
-        <div className="text-[3rem] leading-[3.2rem] italic font-black mb-[1.5rem] text-offBlack">
+        <div className="text-[3rem] sm:text-[4rem] leading-[3.2rem] sm:leading-[4.4rem] italic font-black mb-[1.5rem] text-offBlack">
           <p><span className="text-Purple">{year}</span> {year<2?'year':'years'}</p>
           <p><span className="text-Purple">{month}</span> months</p>
           <p><span className="text-Purple">{day }</span> days</p>
