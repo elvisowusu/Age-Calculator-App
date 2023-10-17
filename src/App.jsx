@@ -44,11 +44,11 @@ function App() {
           >
 
           <div className="block">
-            <label htmlFor="" className="block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest">
+            <label htmlFor="" className={`block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest`}>
               DAY
             </label>
             <input 
-              className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.65rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]"
+              className={`w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.65rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[1.6rem]`}
               type="number"
               placeholder="DD"
               {...register("DD")}
@@ -57,11 +57,11 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest">
+            <label htmlFor="" className={`block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest`}>
               MONTH
             </label>
             <input 
-              className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.7rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]"
+              className={`w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[1.7rem] border font-bold text-[1.3rem] placeholder:text-[1.1rem] placeholder:pr-[2rem]`}
               type="number"
               placeholder="MM"
               {...register("MM")}
@@ -70,11 +70,11 @@ function App() {
           </div>
 
           <div>
-            <label htmlFor="" className="block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest">
+            <label htmlFor="" className={`block text-xs text-smokeyGrey font-semibold mb-1 tracking-widest`}>
               YEAR
             </label>
             <input 
-              className="w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[0.2zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]" 
+              className={`w-[5rem] outline-none rounded-md border-lightGrey text-offBlack focus:border-Purple py-2 pl-3 pr-[0.2zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaarem] border font-bold text-[1.3rem] placeholder:text-[1.1rem]`}
               type="number"
               placeholder="YYYY"
               {...register("YYYY")}
