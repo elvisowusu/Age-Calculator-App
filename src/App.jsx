@@ -4,6 +4,7 @@ import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import arrowImg from "./assets/icon-arrow.svg";
 import "./App.css";
+import { data } from "autoprefixer";
 
 function App() {
 
@@ -16,7 +17,19 @@ function App() {
     DD:yup
       .number('Requires numeric values')
       .typeError('Required')
-      .required('This field is required'),
+      .required('This field is required')
+      .test('', 'Invalid date', (value, { parent }) => {
+        if (parent.MM === 4 || parent.MM === 6 || parent.MM === 9 || parent.MM === 11) {
+          return !(value >= 31);
+        }else if(parent.MM === 2){
+          const isLeapYear =(year)=>{
+            return (year % 4===0 && year % 100 !== 0)|| (year % 400 ===0);
+          }
+          const maxDaysInFebruary = isLeapYear(parent.YYYY) ? 29:28;
+          return !(value >= maxDaysInFebruary);
+        }
+        return true;
+      }),
 
     MM:yup
       .number('Requires numeric values')
@@ -31,15 +44,20 @@ function App() {
   const {register,handleSubmit,reset,formState:{errors}}=useForm({
     resolver: yupResolver(schema)
   });
-  
 
-  const onSubmit=(data)=>{
-    setCurrentDate(new Date());
-    setDay(currentDate.getDate()-data.DD);
-    setMonth(currentDate.getMonth()-data.MM);
-    setYear(currentDate.getFullYear()-data.YYYY);
-    reset();
-  }
+
+  const onSubmit = async (data) => {
+    try {
+      setCurrentDate(new Date());
+      setDay(currentDate.getDate() - data.DD);
+      setMonth(currentDate.getMonth() - data.MM);
+      setYear(currentDate.getFullYear() - data.YYYY);
+      reset();
+    } catch (error) {
+      console.log('Error:', error);
+    }
+  };
+
 
   return (
     <div className="font-Poppins bg-offWhite h-[100vh] flex flex-col justify-center items-center">
